@@ -1,0 +1,19 @@
+--alter table zip alter column "Zip code" set data type int 
+--USING "Zip code"::integer;
+
+-- Remove all commas from "Number of reviewers"
+--UPDATE hotel_cleaned
+-- SET
+-- "Number of reviewers" = 
+-- replace(hotel_cleaned."Number of reviewers",',','');
+
+-- Alter column TYPE from str to int
+--alter table hotel_cleaned alter column "Number of reviewers" 
+--set data type int USING "Number of reviewers"::integer;
+
+select "Number of reviewers" from hotel_cleaned;
+select "Number of reviewers", zip."Zip code"
+from hotel_cleaned inner join zip
+on hotel_cleaned.zip_id = zip.zip_id 
+order by "Number of reviewers" desc
+LIMIT 5;

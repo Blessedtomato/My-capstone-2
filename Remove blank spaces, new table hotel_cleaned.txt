@@ -1,0 +1,16 @@
+select * from hotel
+where "Cleanliness" != '';
+
+DROP TABLE IF EXISTS hotel_cleaned;
+CREATE TABLE hotel_cleaned AS
+select * from hotel
+where "Cleanliness" != '';
+
+DROP TABLE IF EXISTS hotel_cleaned;
+CREATE TABLE hotel_cleaned AS
+select * from hotel
+where "Cleanliness" != '';
+
+select * from hotel_cleaned;
+
+CREATE TABLE zip AS SELECT DISTINCT "Zip code" FROM hotel_cleaned;

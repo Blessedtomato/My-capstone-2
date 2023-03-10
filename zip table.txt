@@ -1,0 +1,14 @@
+CREATE TABLE zip AS SELECT DISTINCT "Zip code" FROM hotel_cleaned;
+
+ALTER  TABLE zip ADD COLUMN zip_id serial primary key;
+
+select * from zip;
+
+ALTER TABLE hotel_cleaned ADD column zip_id int;
+
+UPDATE hotel_cleaned SET zip_id = zip.zip_id
+FROM zip WHERE hotel_cleaned."Zip code" = zip."Zip code";
+
+ALter TABLE hotel_cleaned DROP COLUMN "Zip code";
+
+select * from hotel_cleaned;

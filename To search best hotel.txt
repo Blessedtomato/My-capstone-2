@@ -1,0 +1,4 @@
+--select * from hotel_cleaned order by "Overall score" desc limit 1;
+
+--select * from hotel_cleaned;
+--select * from zip;
